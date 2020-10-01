@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.listContainer {
+  display: block;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+.thumbnail {
+  margin-right: 15px;
+}
+
+.listItem {
+  border-bottom: 1px solid gray;
+}
