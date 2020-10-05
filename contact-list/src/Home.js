@@ -1,21 +1,26 @@
+
 import React from "react"
 import Users from "./Users.json"
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom"
+import "./Home.css"
+Users
 console.log(Users)
 function Home() {
   return (
     <div className="listContainer">
+      <h1>Contacts</h1>
       {Users.map((user) => (
-        // query id
-        <Link to={"/contact/" + user.id}> 
         <div key={user.id} className="listItem">
-          <img className="thumbnail" src={user.picture.thumbnail} />
-          {user.name.first} {user.name.last}
-        </div>
+        <Link to={"/contact/" + user.id}>
+          <img className="contactThumbnail" src={user.picture.thumbnail} />
         </Link>
+        <Link to={"/contact/" + user.id}>
+          <span>{user.name.first} {user.name.last}</span>
+        </Link>
+        </div>
       ))}
     </div>
   )
 }
-export default Home
 
+export default Home
